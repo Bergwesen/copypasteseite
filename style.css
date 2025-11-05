@@ -1,0 +1,61 @@
+.mainheader {
+	text-align: center;
+
+
+
+}
+
+.bilder {
+	max-width: 80%;
+}
+
+.lineedit {
+	width: 1000px;
+	height: 250px;
+
+
+}
+
+.mainknopf {
+	padding: 5px 15px;
+}
+
+.such {
+	/*	margin: auto;
+	width: 300px; */
+	display: flex;
+	flex-basis: auto;
+	flex-direction: row;
+	margin-bottom: 10px;
+
+}
+
+.eing {
+	/*margin: auto;
+	width: 300px;*/
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+
+
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	row-gap: 1000px;
+}
+
+
+
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.Bild {
+	flex-basis: 50%;
+}

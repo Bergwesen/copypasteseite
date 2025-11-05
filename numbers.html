@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Zahlen
+		</title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<div>
+				<label for="eingabefeld">Zettelinhalt:</label>
+				<br>
+				<textarea id="eingabefeld" name="eingaben"></textarea>
+				<br>
+				<button type="submit" id="sendeknopf">Senden</button>
+			</div>
+		</form>
+
+		<button type="button" onclick="refresh()" id="aktualisieren">Reset</button>
+
+		<script>
+			function refresh(){
+				let b = String(window.location.href);
+				//console.log(b);
+				//console.log(b.slice(22));
+				
+				//	window.location.href = "http://" + window.location.hostname + ":" + window.location.port + "/" + eingabe.toString();
+				let random = "http://"+window.location.hostname +":"+window.location.port+"/";
+				//			console.log(random);
+				//			console.log(b);
+				let cutoff = b.slice(random.length);
+				//			console.log(cutoff);
+				const fetchurl = "http://"+window.location.hostname +":"+window.location.port+"/data?id="+cutoff;
+				//console.log(fetchurl);
+				fetch(fetchurl).then(resp =>{
+					return resp.text();
+					}).then( text => {
+						const link = document.getElementById("eingabefeld");
+						link.textContent = text;
+						;});
+						//					const link = document.getElementById("eingabefeld");
+						
+						//					let bstring = String(b.slice(22));
+						//					link.textContent = "a";
+					}
+					refresh();
+		</script>
+	</body>
+</html>
